@@ -1,27 +1,28 @@
-# AngularCssInJs
+# Angular + React Integration with Shadow DOM & Emotion
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
+This project demonstrates how to embed isolated React components into an Angular app using Shadow DOM. React components are styled using Emotion (CSS-in-JS) for runtime style encapsulation, while Angular uses Tailwind CSS globally.
 
-## Development server
+## 🚀 Goals
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Use React components inside Angular without style conflicts
+- Encapsulate React styles using Shadow DOM
+- Prevent Angular styles (e.g., Tailwind) from affecting React components
+- Prevent React styles from leaking into Angular components
 
-## Code scaffolding
+## 🧩 Architecture Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- React components are wrapped inside **custom Web Components**
+- A shared utility `mountReactInShadowDom()` handles Shadow DOM creation and mounting
+- Angular consumes the Web Components just like regular HTML tags
 
-## Build
+## 📋 TODO
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [ ] ✅ **Pass data from Angular to React**
+  - Support attributes/props from Angular templates → React props
+- [ ] ✅ **Emit events from React to Angular**
+  - Dispatch `CustomEvent` from React buttons, handle in Angular
+- [ ] ✅ **Write unit tests**
+  - Jest for React components
+  - Angular test for custom element presence + communication
+- [ ] ⏳ Optional: Lazy load React components via dynamic imports
+- [ ] ⏳ Optional: Create multiple reusable Web Component wrappers
