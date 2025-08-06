@@ -27,10 +27,17 @@ const buttonStyle = css`
 `;
 
 const DummyComponent = () => {
+  const handleClick = () => {
+    console.log("React button clicked from inside Shadow DOM");
+    alert("Button clicked!");
+  };
+
   return (
     <div css={containerStyle}>
       <h1 css={headingStyle}>I am a React Component</h1>
-      <button css={buttonStyle}>Click Me</button>
+      <button css={buttonStyle} onClick={handleClick}>
+        Click Me
+      </button>
     </div>
   );
 };
