@@ -13,6 +13,7 @@ body {
 
 button {
     border: 1px solid red;
+    background-color: cadetblue;
     padding: 2rem;
 }
 
